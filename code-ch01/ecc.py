@@ -49,6 +49,8 @@ class FieldElement:
         return self.__class__(num, self.prime)
         # self.num and other.num are the actual values
         # self.prime is what we need to mod against
+        num = self.num * pow(other.num, self.prime - 2, self.prime) % self.prime
+        return self.__class__(num, self.prime)
         # We return an element of the same class
        
 
